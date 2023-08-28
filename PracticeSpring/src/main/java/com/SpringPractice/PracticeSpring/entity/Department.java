@@ -14,9 +14,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
-@Getter
 @Entity
-@Data
+@Data /*used to initilize all getter ,setter , constructor and hashcode*/
 @NoArgsConstructor
 @AllArgsConstructor
 public class Department {
@@ -36,29 +35,5 @@ public class Department {
 
     public String departmentCode;
 
-    public void setDepartmentId(long departmentId) {
-        this.departmentId = departmentId;
-    }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
-    }
-
-    public void setDepartmentAddress(String departmentAddress) {
-        this.departmentAddress = departmentAddress;
-    }
-
-    public void setDepartmentCode(String departmentCode) {
-        this.departmentCode = departmentCode;
-    }
-
-    @Override
-    public String toString() {
-        return "Department{" +
-                "departmentId=" + departmentId +
-                ", departmentName='" + departmentName + '\'' +
-                ", departmentAddress='" + departmentAddress + '\'' +
-                ", departmentCode='" + departmentCode + '\'' +
-                '}';
-    }
 }

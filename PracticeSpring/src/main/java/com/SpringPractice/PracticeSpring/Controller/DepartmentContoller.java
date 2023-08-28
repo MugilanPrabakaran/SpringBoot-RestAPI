@@ -1,6 +1,7 @@
 package com.SpringPractice.PracticeSpring.Controller;
 
 import com.SpringPractice.PracticeSpring.entity.Department;
+import com.SpringPractice.PracticeSpring.error.DepartmentNotFoundException;
 import com.SpringPractice.PracticeSpring.service.DepartmentService;
 
 import jakarta.validation.Valid;
@@ -32,7 +33,7 @@ public class DepartmentContoller {
         return  departmentService.fetchDepartmentlist();
     }
     @GetMapping("/departments/{id}")
-    public Department fetchDepartbyId(@PathVariable("id") Long departmentid ){
+    public Department fetchDepartbyId(@PathVariable("id") Long departmentid ) throws DepartmentNotFoundException {
         LOGGER.info("Inside GetDepartmentBy ID   ");
         return (Department) departmentService.fetchDepartbyId(departmentid);
     }

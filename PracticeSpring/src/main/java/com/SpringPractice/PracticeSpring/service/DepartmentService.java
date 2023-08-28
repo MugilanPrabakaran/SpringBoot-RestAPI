@@ -1,6 +1,7 @@
 package com.SpringPractice.PracticeSpring.service;
 
 import com.SpringPractice.PracticeSpring.entity.Department;
+import com.SpringPractice.PracticeSpring.error.DepartmentNotFoundException;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface DepartmentService {
     public List<Department> fetchDepartmentlist();
 
 
-    public Department fetchDepartbyId(Long departmentid);
+    public Department fetchDepartbyId(Long departmentid) throws DepartmentNotFoundException;
 
     public void deletebyId(Long departmentid);
 
